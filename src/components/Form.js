@@ -1,6 +1,10 @@
 import React from 'react'
+import { useReducer } from 'react'
 
 export const Form = () => {
+
+    const []=useReducer(()=>{},{})
+
   return (
     <form className="grid lg:grid-cols-2 w-4/6 gap-4">
     <div className="input-type">
