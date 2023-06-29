@@ -1,9 +1,16 @@
 import React from 'react'
 import { useReducer } from 'react'
 
-export const Form = () => {
+const formReducer = (state,event) => {
+    return{
+        ...state,
+        [event.target.name]: event.target.value
+    }
+}
 
-    const []=useReducer(()=>{},{})
+export const Form = () => {
+    //get current state
+    const [formData,setFormData]=useReducer(formReducer,{})
 
   return (
     <form className="grid lg:grid-cols-2 w-4/6 gap-4">
@@ -11,7 +18,7 @@ export const Form = () => {
         <input type="text" name="firstname" className="border w-full px-5 py-3 focus:outline-none rounded-md" placeholder="FirstName" />
     </div>
     <div className="input-type">
-        <input type="text" name="firstname" className="border w-full px-5 py-3 focus:outline-none rounded-md" placeholder="LastName" />
+        <input type="text" name="lastname" className="border w-full px-5 py-3 focus:outline-none rounded-md" placeholder="LastName" />
     </div>
     <div className="input-type">
         <input type="text" name="email" className="border w-full px-5 py-3 focus:outline-none rounded-md" placeholder="Email" />
