@@ -1,3 +1,4 @@
+import { Table } from '@/components/Table';
 import Head from 'next/head'
 import { BiUserPlus } from "react-icons/bi";
 
@@ -19,10 +20,13 @@ export default function Home() {
                 Add Employee <span className='px-1'><BiUserPlus size={23}></BiUserPlus></span>
               </button>
           </div>
+      </div>
 
-          {/* collapsable form */}
+      {/* collapsable form */}
 
-          {/* table */}
+      {/* table */}
+      <div className="container mx-auto">
+        <Table/>
       </div>
 
     </main>
