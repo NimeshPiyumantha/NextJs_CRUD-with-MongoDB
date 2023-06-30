@@ -1,7 +1,7 @@
 import React from 'react'
 import { BiEdit, BiTrashAlt } from "react-icons/bi";
 
-export const Table = () => {
+const Table = () => {
   return (
     <table className="min-w-full table-auto">
             <thead>
@@ -53,3 +53,4 @@ export const Table = () => {
         </table>
   )
 }
+export default Table;
