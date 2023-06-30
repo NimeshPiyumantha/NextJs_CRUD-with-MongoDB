@@ -1,5 +1,5 @@
-import { Table } from '@/components/Table';
-import { Form } from '@/components/form';
+import { Table } from '../components/Table';
+import { Form } from '../components/Form';
 import Head from 'next/head'
 import { BiUserPlus } from "react-icons/bi";
 
