@@ -2,6 +2,7 @@
 import { useReducer } from "react";
 import { BiPlus } from "react-icons/bi";
 import Success from "./success";
+import Bug from "./bug";
 
 const formReducer = (state, event) => {
   return {
@@ -21,7 +22,7 @@ export const Form = () => {
     console.log(formData);
   };
 
-  if (Object.keys(formData).length > 0) return <Success />;
+  if (Object.keys(formData).length > 0) return <Bug message={"Error"}/>;
 
   return (
     <form className="grid lg:grid-cols-2 w-4/6 gap-4" onSubmit={handleSubmit}>
