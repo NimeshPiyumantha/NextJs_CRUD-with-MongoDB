@@ -1,11 +1,12 @@
-"use client"
-import { useReducer } from "react"
-import { BiPlus } from 'react-icons/bi'
+"use client";
+import { useReducer } from "react";
+import { BiPlus } from "react-icons/bi";
+import Success from "./success";
 
 const formReducer = (state, event) => {
   return {
     ...state,
-    [event.target.name]: event.target.value
+    [event.target.name]: event.target.value,
   };
 };
 
@@ -15,8 +16,12 @@ export const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (Object.keys(formData).length === 0)
+      return console.log("Don't have form data");
     console.log(formData);
   };
+
+  if (Object.keys(formData).length > 0) return <Success />;
 
   return (
     <form className="grid lg:grid-cols-2 w-4/6 gap-4" onSubmit={handleSubmit}>
@@ -96,8 +101,11 @@ export const Form = () => {
       </div>
 
       <button className="flex justify-center text-md w-2/6 bg-green-500 text-white px-4 py-2 border rounded-md font-bold hover:bg-gray-50 hover:border-green-500 hover:text-green-500">
-             Add <span className="px-3 font-bold"><BiPlus size={24}></BiPlus></span>
-            </button>
+        Add{" "}
+        <span className="px-3 font-bold">
+          <BiPlus size={24}></BiPlus>
+        </span>
+      </button>
     </form>
   );
 };
