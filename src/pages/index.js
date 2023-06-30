@@ -4,6 +4,9 @@ import { BiUserPlus } from "react-icons/bi";
 import Table from "../components/table";
 import Form from "../components/form";
 import { useState } from "react";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [visible, setVisible] = useState(false);
@@ -11,7 +14,7 @@ export default function Home() {
   const handler = () => {
     setVisible(!visible);
   };
-
+  
   return (
     <section>
       <Head>
