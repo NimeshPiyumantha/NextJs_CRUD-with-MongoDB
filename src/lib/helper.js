@@ -1,60 +1,81 @@
 const BASE_URL = "http://localhost:3000";
 // all user
 export const getUsers = async () => {
-  const response = await fetch(`${BASE_URL}/api/users`);
-  const json = await response.json();
+  try {
+    const response = await fetch(`${BASE_URL}/api/users`);
+    const json = await response.json();
 
-  return json;
+    return json;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
 };
 
 // single user
 export const getUser = async (userId) => {
-  const response = await fetch(`${BASE_URL}api/users/${userId}`);
-  const json = await response.json();
+  try {
+    const response = await fetch(`${BASE_URL}/api/users/${userId}`);
+    const json = await response.json();
 
-  if (json) return json;
-  return {};
+    if (json) return json;
+    return {};
+  } catch (error) {
+    console.error(error);
+    return {};
+  }
 };
 
 // posting a new user
-export async function addUser(formData) {
+export const addUser = async (formData) => {
   try {
-    const Options = {
+    const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     };
 
-    const response = await fetch(`${BASE_URL}api/users`, Options);
+    const response = await fetch(`${BASE_URL}/api/users`, options);
     const json = await response.json();
 
     return json;
   } catch (error) {
+    console.error(error);
     return error;
   }
-}
+};
 
 // Update a new user
-export async function updateUser(userId, formData) {
-  const Options = {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(formData),
-  };
+export const updateUser = async (userId, formData) => {
+  try {
+    const options = {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    };
 
-  const response = await fetch(`${BASE_URL}api/users/${userId}`, Options);
-  const json = await response.json();
-  return json;
-}
+    const response = await fetch(`${BASE_URL}/api/users/${userId}`, options);
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+};
 
 // Delete a new user
-export async function deleteUser(userId) {
-  const Options = {
-    method: "DELETE",
-    headers: { "Content-Type": "application/json" },
-  };
+export const deleteUser = async (userId) => {
+  try {
+    const options = {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    };
 
-  const response = await fetch(`${BASE_URL}api/users/${userId}`, Options);
-  const json = await response.json();
-  return json;
-}
+    const response = await fetch(`${BASE_URL}/api/users/${userId}`, options);
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+};
