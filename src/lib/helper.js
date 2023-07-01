@@ -47,4 +47,14 @@ export async function updateUser(userId, formData) {
   return json;
 }
 
+// Delete a new user
+export async function deleteUser(userId) {
+  const Options = {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+  };
 
+  const response = await fetch(`${BASE_URL}api/users/${userId}`, Options);
+  const json = await response.json();
+  return json;
+}
