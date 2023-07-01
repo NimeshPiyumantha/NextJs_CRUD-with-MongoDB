@@ -3,11 +3,10 @@ import { BiEdit, BiTrashAlt } from "react-icons/bi";
 // import data from "../database/data.json";
 import { getUsers } from "../lib/helper";
 import { useQuery } from "react-query";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import { toggleChangeAction } from '../redux/reducer'
 
 const Table = () => {
-  const visible = useSelector((state) => state);
-  console.log(visible);
   const { isLoading, isError, data, error } = useQuery("users", getUsers);
 
   if (isLoading) return <div>Employee is Loading...</div>;
@@ -47,6 +46,14 @@ const Table = () => {
 };
 
 function Tr({ id, name, avatar, email, salary, date, status }) {
+  const visible = useSelector((state) => state.app.client.toggleForm);
+  const dispatch = useDispatch();
+
+  const onUpdate = () => {
+    dispatch(toggleChangeAction());
+    console.log(visible);
+  };
+
   return (
     <tr className="bg-gray-50 text-center">
       <td className="px-16 py-2 flex flex-row items-center">
@@ -80,7 +87,7 @@ function Tr({ id, name, avatar, email, salary, date, status }) {
         </button>
       </td>
       <td className="px-16 py-2 flex justify-around gap-5">
-        <button className="cursor">
+        <button className="cursor" onClick={onUpdate}>
           <BiEdit size={25} color={"rgb(34,197,94)"}></BiEdit>
         </button>
         <button className="cursor">
