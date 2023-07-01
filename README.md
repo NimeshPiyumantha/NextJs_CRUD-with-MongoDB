@@ -32,4 +32,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-#NextJs_CRUD-with-MongoDB
+
+##
+
+# NextJs_CRUD-with-MongoDB
+This is a learning Next Js.
+
+###
+[![wakatime](https://wakatime.com/badge/user/bde2acba-42bd-46e8-a905-d74c6f260407/project/dcaf4713-8352-4061-95bc-c8b34e8d0be4.svg)](https://wakatime.com/badge/user/bde2acba-42bd-46e8-a905-d74c6f260407/project/dcaf4713-8352-4061-95bc-c8b34e8d0be4)
