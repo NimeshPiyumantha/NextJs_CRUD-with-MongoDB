@@ -3,8 +3,8 @@ import { BiEdit, BiTrashAlt } from "react-icons/bi";
 // import data from "../database/data.json";
 import { getUsers } from "../lib/helper";
 import { useQuery } from "react-query";
-import { useSelector,useDispatch } from "react-redux";
-import { toggleChangeAction } from '../redux/reducer'
+import { useSelector, useDispatch } from "react-redux";
+import { toggleChangeAction, updateAction } from "../redux/reducer";
 
 const Table = () => {
   const { isLoading, isError, data, error } = useQuery("users", getUsers);
@@ -45,13 +45,15 @@ const Table = () => {
   );
 };
 
-function Tr({ id, name, avatar, email, salary, date, status }) {
+function Tr({ _id, name, avatar, email, salary, date, status }) {
   const visible = useSelector((state) => state.app.client.toggleForm);
   const dispatch = useDispatch();
 
   const onUpdate = () => {
     dispatch(toggleChangeAction());
-    console.log(visible);
+    if (visible) {
+      dispatch(updateAction(_id));
+    }
   };
 
   return (
