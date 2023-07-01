@@ -5,16 +5,19 @@ import Table from "../components/table";
 import Form from "../components/form";
 import { useState } from "react";
 import { Inter } from "next/font/google";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleChangeAction } from "../redux/reducer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [visible, setVisible] = useState(false);
+  const visible = useSelector((state) => state.app.client.toggleForm);
+  const dispatch = useDispatch();
 
   const handler = () => {
-    setVisible(!visible);
+    dispatch(toggleChangeAction());
   };
-  
+
   return (
     <section>
       <Head>
