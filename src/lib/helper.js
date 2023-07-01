@@ -34,3 +34,17 @@ export async function addUser(formData) {
   }
 }
 
+// Update a new user
+export async function updateUser(userId, formData) {
+  const Options = {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData),
+  };
+
+  const response = await fetch(`${BASE_URL}api/users/${userId}`, Options);
+  const json = await response.json();
+  return json;
+}
+
+
