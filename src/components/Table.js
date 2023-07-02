@@ -17,10 +17,10 @@ const Table = () => {
   if (isError) return <div>Got Error {error}</div>;
 
   return (
-    <table className="min-w-full table-auto">
+    <table className="min-w-full table-auto rounded-lg m-3">
       <thead>
         <tr className="bg-gray-800">
-          <th className="px-16 py-2">
+          <th className="px-16 py-3">
             <span className="text-gray-200">Name</span>
           </th>
           <th className="px-16 py-2">
@@ -67,7 +67,7 @@ function Tr({ _id, name, avatar, email, salary, date, status }) {
   };
 
   return (
-    <tr className="bg-gray-50 text-center">
+    <tr className="bg-gray-200 text-center rounded-xl border-red-300 border-y-2	">
       <td className="px-16 py-2 flex flex-row items-center">
         <img
           src={avatar || "#"}
@@ -100,7 +100,7 @@ function Tr({ _id, name, avatar, email, salary, date, status }) {
       </td>
       <td className="px-16 py-2 flex justify-around gap-5">
         <button className="cursor" onClick={onUpdate}>
-          <BiEdit size={25} color={"rgb(249, 202, 36)"}></BiEdit>
+          <BiEdit size={25} color={"rgb(254, 211, 48)"}></BiEdit>
         </button>
         <button className="cursor" onClick={onDelete}>
           <BiTrashAlt size={25} color={"rgb(244,63,94)"}></BiTrashAlt>
