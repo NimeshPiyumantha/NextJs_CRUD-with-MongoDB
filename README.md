@@ -55,12 +55,22 @@ This is a learning Next Js.
 - Postman
 - MongoDB
 - Mongoose
-- Redux 
+- Redux
 - Redux Toolkit
 
 ## - POSTMAN (`Url`)
 
 - 🔗 <a href="https://documenter.getpostman.com/view/21678240/2s93zCXzWZ" target="_blank">**POSTMAN**</a>
+
+##
+
+<div align="center">
+
+![alt text](https://github.com/NimeshPiyumantha/NextJs_CRUD-with-MongoDB/blob/master/src/assests/Record_2023_07_02_09_33_48_760.gif)
+
+</div>
+
+###
 
 ### Clone this repository ✅
 
